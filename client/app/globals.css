@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-synapse-black: #030303;
+  --color-synapse-violet: #8B5CF6;
+  --color-synapse-cyan: #06B6D4;
+  --color-synapse-emerald: #10B981;
+  --font-serif: var(--font-instrument), "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+:root {
+  --background: #030303;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Base custom utilities */
+@utility text-shimmer {
+  background: linear-gradient(90deg, #a78bfa 0%, #ffffff 40%, #ffffff 60%, #22d3ee 100%);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: var(--animate-shimmer);
+}
+
+@utility glass-panel {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility glow-violet {
+  box-shadow: 0 0 20px -10px #8b5cf6;
+}
+
+@utility glow-cyan {
+  box-shadow: 0 0 20px -10px #06b6d4;
+}
+
+/* Hide scrollbar for cleaner app interface */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

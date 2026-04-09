@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Data Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">📊 SmartData</div>
+            <p class="subtitle">AI-Powered Data Insights</p>
+            
+            <div class="upload-section">
+                <h3>Dataset</h3>
+                <p>Status: <span style="color: #34D399;">Connected</span></p>
+                <p>Active File: <strong>sales.csv</strong></p>
+            </div>
+            
+            <div class="example-queries">
+                <h3>Try Asking:</h3>
+                <ul>
+                    <li onclick="setQuery(this)">Show sales for 2024</li>
+                    <li onclick="setQuery(this)">Top 5 products</li>
+                    <li onclick="setQuery(this)">Sales by region</li>
+                    <li onclick="setQuery(this)">Only for South region</li>
+                    <li onclick="setQuery(this)">Compare with 2023</li>
+                    <li onclick="setQuery(this)">Reset</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="chat-section">
+                <div id="chat-history" class="chat-history">
+                    <div class="message assistant">
+                        Hi! I am your Smart Data Assistant. Ask me questions about your sales data. Try clicking one of the examples on the left!
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="queryInput" placeholder="Ask a question about your data..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendQuery()">Ask</button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="insights-card">
+                    <h3>💡 AI Insights</h3>
+                    <p id="insightText">Ask a query to generate insights based on the data.</p>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="resultChart"></canvas>
+                </div>
+
+                <div class="table-container">
+                    <table id="resultTable">
+                        <thead>
+                            <tr id="tableHeader"></tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

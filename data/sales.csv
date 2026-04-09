@@ -1,0 +1,15 @@
+year,month,product,region,sales
+2023,Jan,Laptop,North,15000
+2023,Feb,Smartphone,South,12000
+2023,Mar,Tablet,East,8000
+2023,Apr,Monitor,West,5000
+2023,May,Laptop,South,16000
+2023,Jun,Smartphone,North,13000
+2024,Jan,Laptop,North,18000
+2024,Feb,Smartphone,South,14000
+2024,Mar,Tablet,East,9000
+2024,Apr,Monitor,West,6000
+2024,May,Laptop,South,17000
+2024,Jun,Smartphone,North,15000
+2024,Jul,Tablet,West,9500
+2024,Aug,Monitor,East,7000
